@@ -1,0 +1,73 @@
+G17 G71 G90 G94 SOFT
+G64 CFTCP
+
+R1=0;Z_INICIAL
+R2=.5;INCREMENTO
+R3=0;Z_FINAL
+R4=1500
+R8=30;GRAU
+
+
+
+G0 Z=R1+200
+S=R4 M3
+XR20 YR21 ;POSICIONAMENTO
+Z=R1+1
+RETORNO2:
+IF R1<R3 GOTOF RETORNO1
+L400
+XR20 YR21 ;POSICIONAMENTO
+Z=R1
+
+IF R10>R40
+   
+   L100
+   
+ELSE
+   IF R10>R41
+      
+      L100
+      
+   ELSE
+      IF R10>R42
+         
+         L100
+         
+      ELSE
+         IF R10>R43
+            
+            L100
+            
+         ELSE
+         IF R10>R40
+          
+              L100
+   
+ELSE
+   IF R10>R41
+      
+      L100
+      
+   ELSE
+      IF R10>R42
+         
+         L100
+         
+      ELSE
+ 
+
+
+
+         ENDIF
+      ENDIF
+   ENDIF
+ENDIF
+
+R1=R1-R2
+GOTOB RETORNO2
+RETORNO1:
+
+G0 Z=R1+250
+M30
+
+

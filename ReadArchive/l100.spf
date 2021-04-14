@@ -1,0 +1,9 @@
+FOR II=0 TO TAM_BB*2
+       IF (II MOD 2)
+              MSG("POSICAO " << II << "="<< BB[II])
+              BB[II] = "_"
+       ELSE
+              BB[II] = " "
+       ENDIF
+ENDFOR
+M17

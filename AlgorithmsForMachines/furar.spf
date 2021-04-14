@@ -1,0 +1,40 @@
+PROC WEDSON_INT  (REAL ZZI, REAL ZZF,INT INC)
+MSG("" << ZZI << ZZF << INC)
+
+IF R73 == 0
+       R1=ZZI
+ELSE
+       R1=R73
+ENDIF
+
+R2=INC
+IF R75 == 1
+       R3=R1 - ZZF
+ELSE
+       R3=ZZF
+ENDIF
+
+R11=R1
+;R11=ZZI
+OO2:
+IF R2 == 0
+       Z=R1+2
+       G1 Z=R1 F20
+       Z=R3
+       Z=R1+2 F250
+       ;G1 Z=ZZF
+       GOTOF OO
+ELSE
+      IF R1 <= R3 GOTOF OO
+              R1=R1-R2
+              G0 Z=R1+2
+              G1 Z=R1
+              G0 Z=R11+5
+ENDIF
+GOTOB OO2
+OO: 
+G0 Z300
+R73=0
+M17
+
+
